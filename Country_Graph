@@ -1,0 +1,9 @@
+install.packages(ggplot2)
+library(ggplot2)
+library(scales)
+gapminder = read.csv("/Users/megangroathouse/Downloads/gapminder-5060.csv")
+gapminder
+
+gap <- subset(gapminder, country == "Canada" | country == "Mexico" | country == "United States")   
+ggplot(data=gap, aes(x=lifeExp, y=gdpPercap, group=country, color=country)) +
+geom_line()
